@@ -62,9 +62,7 @@ public class Settings {
     public static void setWordWrap(boolean wordWrap) {
         properties.setProperty("wordWrap", wordWrap + "");
         store();
-
     }
-
     public static void setStatusBar(boolean statusBar) {
         properties.setProperty("statusBar", statusBar + "");
         store();

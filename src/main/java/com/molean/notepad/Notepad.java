@@ -62,8 +62,10 @@ public class Notepad {
         undoManager = new UndoManager();
         jTextArea.setFont(getFont());
         jTextArea.getDocument().addUndoableEditListener(undoManager);
-        jScrollPane = new JScrollPane(jTextArea, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        //        jScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        if(getWordWrap())
+            jScrollPane = new JScrollPane(jTextArea, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        else
+            jScrollPane = new JScrollPane(jTextArea, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane.setBorder(null);
         jFrame.setIconImage(getIcon());
         jFrame.setBounds(getLeft(), getTop(), getWidth(), getHeight());

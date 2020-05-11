@@ -8,6 +8,7 @@ import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
 import static com.molean.notepad.I18n.getMessage;
+import static com.molean.notepad.Settings.getWordWrap;
 import static java.awt.event.InputEvent.CTRL_DOWN_MASK;
 
 public class Menu {
@@ -57,6 +58,7 @@ public class Menu {
 
         JMenu formatMenu = jMenuBar.add(new JMenu(getMessage("format")));
         JCheckBoxMenuItem wordWrapItem = new JCheckBoxMenuItem(getMessage("wordWrap"));
+        wordWrapItem.setSelected(getWordWrap());
         formatMenu.add(wordWrapItem);
         JMenuItem fontItem = formatMenu.add(getMessage("font"));
 

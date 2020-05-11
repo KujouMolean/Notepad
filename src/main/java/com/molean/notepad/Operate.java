@@ -165,7 +165,7 @@ public class Operate {
         Settings.setWidth(notepad.getjFrame().getWidth());
         Settings.setLeft(notepad.getjFrame().getX());
         Settings.setTop(notepad.getjFrame().getY());
-//        Settings.setWordWrap();
+        Settings.setWordWrap(notepad.getjTextArea().getLineWrap());
         if (notepad.isChanged()) {
             String replacement;
             if (notepad.getArgs().length == 0) {
