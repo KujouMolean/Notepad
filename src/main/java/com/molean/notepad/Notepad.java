@@ -62,6 +62,7 @@ public class Notepad {
         undoManager = new UndoManager();
         jTextArea.setFont(getFont());
         jTextArea.getDocument().addUndoableEditListener(undoManager);
+        jTextArea.setLineWrap(getWordWrap());
         if(getWordWrap())
             jScrollPane = new JScrollPane(jTextArea, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         else

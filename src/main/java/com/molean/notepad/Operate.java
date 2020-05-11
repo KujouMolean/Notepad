@@ -273,6 +273,7 @@ public class Operate {
             notepad.getjScrollPane().setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         }else{
             notepad.getjTextArea().setLineWrap(false);
+            notepad.getjScrollPane().setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         }
     }
 
