@@ -12,8 +12,8 @@ import static java.awt.event.InputEvent.CTRL_DOWN_MASK;
 
 public class Menu {
     private JMenuBar jMenuBar;
-    private Notepad notepad;
-    private Find find;
+    private final Notepad notepad;
+    private final Find find;
 
     public Menu(Notepad notepad) {
         this.notepad = notepad;
@@ -131,9 +131,9 @@ public class Menu {
 //        zoomOutItem.addActionListener(actionEvent -> zoomOut(actionEvent));
 //        restoreDefaultZoomItem.addActionListener(actionEvent -> restoreDefaultZoom(actionEvent));
 //        statusBarItem.addActionListener(actionEvent -> statusBar(actionEvent));
-//        viewHelpItem.addActionListener(actionEvent -> viewHelp(actionEvent));
-//        sendFeedbackItem.addActionListener(actionEvent -> sendFeedback(actionEvent));
-        aboutNotepadItem.addActionListener(actionEvent -> aboutNotepad(actionEvent));
+        viewHelpItem.addActionListener(actionEvent -> viewHelp());
+        sendFeedbackItem.addActionListener(actionEvent -> sendFeedback());
+        aboutNotepadItem.addActionListener(actionEvent -> aboutNotepad());
 
         editMenu.addMenuListener(new MenuListener() {
             @Override
@@ -172,8 +172,16 @@ public class Menu {
         return jMenuBar;
     }
 
-    private void aboutNotepad(ActionEvent actionEvent) {
-        JOptionPane.showMessageDialog(null,"Design by Molean. GNU License. ");
+    private void sendFeedback() {
+        Operate.sendFeedback(notepad);
+    }
+
+    private void viewHelp() {
+        Operate.viewHelp(notepad);
+    }
+
+    private void aboutNotepad() {
+        JOptionPane.showMessageDialog(null,"Design by Molean. GPLv3 License. ");
     }
 
     private void font(ActionEvent actionEvent) {

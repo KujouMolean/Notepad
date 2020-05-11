@@ -275,4 +275,30 @@ public class Operate {
             notepad.getjTextArea().setLineWrap(false);
         }
     }
+
+    public static void sendFeedback(Notepad notepad) {
+        String url="https://github.com/cnMolean/Notepad/issues";
+        try{
+            java.net.URI uri = java.net.URI.create(url);
+            java.awt.Desktop dp = java.awt.Desktop.getDesktop();
+            if (dp.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                dp.browse(uri);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void viewHelp(Notepad notepad) {
+        String url="https://github.com/cnMolean/Notepad";
+        try{
+            java.net.URI uri = java.net.URI.create(url);
+            java.awt.Desktop dp = java.awt.Desktop.getDesktop();
+            if (dp.isSupported(java.awt.Desktop.Action.BROWSE)) {
+                dp.browse(uri);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
